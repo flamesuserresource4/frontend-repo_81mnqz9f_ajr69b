@@ -1,0 +1,66 @@
+/* Thandi Front-End Prototype Styles (<= 300 lines) */
+:root{
+  --bg:#11121E; /* dark canvas */
+  --fg:#E9FDF8; /* near-white on dark */
+  --muted:#B8EDE2; /* soft text */
+  --accent:#00FFD1; /* neon-teal */
+  --warn:#FF4D00; /* safety orange */
+  --card:#151729; /* card background */
+  --line:rgba(233,253,248,0.16); /* 2px borders */
+  --focus:rgba(0,255,209,0.7);
+  --shadow:0 2px 0 rgba(0,0,0,0.4);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.5 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;-webkit-text-size-adjust:100%}
+img,svg{max-width:100%;height:auto}
+button,input,select,textarea{font:inherit;color:inherit;background:none;border:none;outline:0}
+A, a{color:inherit;text-decoration:none}
+
+/* Layout */
+.container{width:100%;max-width:960px;margin:0 auto;padding:0 16px}
+.header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:2px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font-weight:700;letter-spacing:.02em}
+.main{min-height:calc(100vh - 56px)}
+.footer-note{position:fixed;left:0;right:0;bottom:0;background:var(--warn);color:#11121E;text-align:center;padding:10px 12px;font-size:12pt;border-top:2px solid #11121E}
+
+/* Components */
+.btn{display:inline-flex;align-items:center;justify-content:center;height:48px;min-width:180px;padding:0 20px;border:2px solid var(--accent);color:var(--bg);background:var(--accent);border-radius:6px;transition:background .2s,color .2s,opacity .2s;box-shadow:var(--shadow)}
+.btn:focus{outline:2px solid var(--focus);outline-offset:2px}
+.btn.ghost{background:transparent;color:var(--fg)}
+.btn.ghost:hover{background:rgba(0,255,209,0.08)}
+
+.card{background:var(--card);border:2px solid var(--line);border-radius:8px;padding:16px}
+.h1{font-size:28px;margin:8px 0 4px}
+.h2{font-size:22px;margin:8px 0 4px}
+.p{color:var(--muted);margin:4px 0 8px}
+
+.input{width:100%;height:48px;padding:0 12px;border:2px solid var(--line);border-radius:6px;background:#0E1020;color:var(--fg)}
+.input:focus{border-color:var(--accent);outline:2px solid var(--focus);outline-offset:2px}
+.label{display:block;font-weight:700;margin:8px 0 6px}
+.helper{color:var(--muted);font-size:12px}
+
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.stack{display:flex;flex-direction:column;gap:12px}
+.center{text-align:center}
+.mt-2{margin-top:8px}.mt-3{margin-top:12px}.mt-4{margin-top:16px}.mt-6{margin-top:24px}.mt-8{margin-top:32px}
+
+.progress{height:8px;background:#0C0E1B;border:2px solid var(--line);border-radius:999px;overflow:hidden}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--accent),#3dffd8)}
+
+.banner{background:#0A0D18;border:2px solid var(--line);color:var(--muted);padding:12px;border-radius:6px}
+.banner.warn{background:rgba(255,77,0,0.1);border-color:#FF7A3D;color:#ffdacc}
+
+.table{width:100%;border-collapse:collapse;border:2px solid var(--line)}
+.table th,.table td{border-top:2px solid var(--line);padding:10px 8px;text-align:left}
+.table th{color:var(--muted);font-weight:700;background:#0E1020}
+.table tr:hover{background:#0D1020}
+
+.badge{display:inline-block;border:2px solid var(--line);padding:4px 8px;border-radius:999px;font-size:12px;color:var(--muted)}
+
+/* Utilities */
+.hidden{display:none !important}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Small screens first */
+@media (min-width:640px){.h1{font-size:32px}.h2{font-size:24px}}
